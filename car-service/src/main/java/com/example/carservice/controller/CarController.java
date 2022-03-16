@@ -32,8 +32,9 @@ public class CarController {
     }
 
     @GetMapping("/")
-    public String getIndexPage(){
-        return "index";
+    public String getIndexPage(Model model){
+        model.addAttribute("bodyContent", "index");
+        return "master-template";
     }
 
     @GetMapping("/cars")
@@ -44,7 +45,8 @@ public class CarController {
         }
         List<Car> cars = this.carService.listAll();
         model.addAttribute("cars", cars);
-        return "cars";
+        model.addAttribute("bodyContent", "cars");
+        return "master-template";
     }
 
     @DeleteMapping("/cars/delete/{id}")
@@ -59,7 +61,10 @@ public class CarController {
         model.addAttribute("cars", cars);
         PagedModel<Manufacturer> pageManufacturers = keycloakRestTemplate.getForObject("http://localhost:9092/manufacturers",PagedModel.class);
         model.addAttribute("manufacturers",pageManufacturers);
-        return "add-form";
+
+        model.addAttribute("bodyContent", "add-form");
+        return "master-template";
+        //return "add-form";
     }
 
     @PostMapping("/cars/add")
@@ -77,7 +82,10 @@ public class CarController {
     public String manufacturer(Model model){
         PagedModel<Manufacturer> pageManufacturers = keycloakRestTemplate.getForObject("http://localhost:9092/manufacturers",PagedModel.class);
         model.addAttribute("manufacturers",pageManufacturers);
-        return "manufacturers";
+
+        model.addAttribute("bodyContent", "manufacturers");
+        return "master-template";
+        //return "manufacturers";
     }
 
     @GetMapping("/jwt")

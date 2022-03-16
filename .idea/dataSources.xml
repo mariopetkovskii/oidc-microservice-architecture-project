@@ -6,7 +6,12 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/manufacturer-db</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="manufacturer-db@localhost [2]" uuid="3f5d43b1-c6c6-42b4-8882-f5861e45c317">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/manufacturer-db</jdbc-url>
     </data-source>
   </component>
 </project>
