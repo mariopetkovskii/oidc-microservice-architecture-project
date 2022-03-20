@@ -14,6 +14,7 @@
     <name>car-service</name>
     <description>car-service</description>
     <properties>
+        <start-class>com.baeldung.ssl.HttpsEnabledApplication</start-class>
         <java.version>11</java.version>
     </properties>
     <dependencies>
