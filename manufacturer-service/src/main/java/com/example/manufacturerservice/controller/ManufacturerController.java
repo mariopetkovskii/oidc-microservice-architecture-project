@@ -25,7 +25,8 @@ public class ManufacturerController {
         }
         List<Manufacturer> manufacturers = this.manufacturerService.listAll();
         model.addAttribute("manufacturers", manufacturers);
-        return "manufacturer";
+        model.addAttribute("bodyContent", "manufacturer");
+        return "master-template";
     }
 
     @DeleteMapping("/delete/{id}")
@@ -36,14 +37,15 @@ public class ManufacturerController {
 
     @GetMapping("/add-form")
     public String addProductPage(Model model) {
-        return "add-form";
+        model.addAttribute("bodyContent", "add-form");
+        return "master-template";
     }
 
     @PostMapping("/add")
     public String saveProduct(
             @RequestParam(required = false) Long id,
             @RequestParam String name) {
-            this.manufacturerService.save(name);
+        this.manufacturerService.save(name);
         return "redirect:/manufacturer";
     }
 
