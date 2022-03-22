@@ -15,7 +15,7 @@ public class SecurityController {
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) throws ServletException {
         request.logout();
-        return "redirect:/";
+        return "redirect:/cars";
     }
 
 }

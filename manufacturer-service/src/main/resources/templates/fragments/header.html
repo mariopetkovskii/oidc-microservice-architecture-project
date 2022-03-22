@@ -9,13 +9,10 @@
                         <a class="nav-link" th:href="@{/}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/cars}">Cars</a>
+                        <a class="nav-link" href="https://localhost:9091/cars">Cars</a>
                     </li>
                     <li class="nav-item" sec:authorize="hasAuthority('admin')">
-                        <a class="nav-link" th:href="@{/manufacturers}">Manufacturers</a>
-                    </li>
-                    <li class="nav-item" sec:authorize="hasAuthority('admin')">
-                        <a class="nav-link" href="http://localhost:9092/manufacturer">Man</a>
+                        <a class="nav-link" href="http://localhost:9092/manufacturer">Manufacturers</a>
                     </li>
                     <li class="nav-item"><a href="" class="nav-link" data-toggle="modal" data-target="#ourTeam">&nbsp;Our team</a></li>
                 </ul>
@@ -26,7 +23,7 @@
                             <span sec:authentication="name"></span>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" th:href="@{/logout}">Logout</a>
+                            <a class="dropdown-item" href="https://localhost:9091/logout">Logout</a>
                         </div>
                     </li>
 
