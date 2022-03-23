@@ -50,13 +50,13 @@ public class CarController {
     }
 
     @DeleteMapping("/cars/delete/{id}")
-    public String deleteProduct(@PathVariable Long id) {
+    public String deleteCar(@PathVariable Long id) {
         this.carService.deleteById(id);
         return "redirect:/cars";
     }
 
     @GetMapping("/cars/add-form")
-    public String addProductPage(Model model) {
+    public String addCarPage(Model model) {
         List<Car> cars = this.carService.listAll();
         model.addAttribute("cars", cars);
         PagedModel<Manufacturer> pageManufacturers = keycloakRestTemplate.getForObject("http://localhost:9092/manufacturers",PagedModel.class);
@@ -68,7 +68,7 @@ public class CarController {
     }
 
     @PostMapping("/cars/add")
-    public String saveProduct(
+    public String saveCar(
             @RequestParam(required = false) Long id,
             @RequestParam String name,
             @RequestParam Integer price,

@@ -16,7 +16,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="manufacturer : ${manufacturers}" class="product">
+                        <tr th:each="manufacturer : ${manufacturers}" class="car">
                             <td th:text="${manufacturer.getName()}"></td>
                             <td class="text-right">
                                 <th:block sec:authorize="hasAuthority('admin')">

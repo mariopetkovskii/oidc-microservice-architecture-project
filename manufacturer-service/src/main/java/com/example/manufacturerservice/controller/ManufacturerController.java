@@ -30,19 +30,19 @@ public class ManufacturerController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable Long id) {
+    public String deleteCar(@PathVariable Long id) {
         this.manufacturerService.deleteById(id);
         return "redirect:/manufacturer";
     }
 
     @GetMapping("/add-form")
-    public String addProductPage(Model model) {
+    public String addCarPage(Model model) {
         model.addAttribute("bodyContent", "add-form");
         return "master-template";
     }
 
     @PostMapping("/add")
-    public String saveProduct(
+    public String saveCar(
             @RequestParam(required = false) Long id,
             @RequestParam String name) {
         this.manufacturerService.save(name);
